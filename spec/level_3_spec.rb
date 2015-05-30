@@ -28,7 +28,7 @@ describe "Level 3" do
 
     it "adds to a nested array" do
       # Add a student to the end of the school's students' array.
-      school[:students].push({"Jia" => "A"})
+      school[:students].push({:name => "Jia", :grade => "A"})
       expect(school[:students].count).to eq(5)
       expect(school[:students].last[:name]).to_not eq("Sophie")
     end

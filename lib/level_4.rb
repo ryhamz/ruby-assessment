@@ -1,12 +1,27 @@
 def grade_for (name, s)
-  puts "In grade_for"
-  #  return s[:students].select { |student| student(:name) == name} [:grade]
-  return s[:students]
+  list =  s[:students]
+  list.find { |i| i[:name] == name} [:grade]
 end
 
 def find_instructor (name, s)
-  puts "finding instructor"
-  #  return  s[:instructors].select { |ins| ins(:name) == name}
-  index = s[:instructors].index { |x| x(:name) == name}
-  return s[:instructors][index]
+  list = s[:instructors]
+  list.find { |i| i[:name] == name}
+end
+
+def find_student (name, s)
+  list = s[:students]
+  list.find { |i| i[:name] == name}
+end
+
+def update_subject_for (name, sub, s)
+  list = s[:instructors]
+  list.find { |i| i[:name] == name} [:subject] = sub
+end
+
+def add_student (name, grade, s)
+  s[:students].push({:name => name, :grade => grade})
+end
+
+def add_new_property(prop, val, s)
+  s[prop] = val
 end
